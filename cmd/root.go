@@ -4,7 +4,6 @@ Copyright © 2023 fileformat@gmail.com
 package cmd
 
 import (
-	"fmt"
 	"os"
 
 	"log/slog"
