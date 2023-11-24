@@ -11,6 +11,14 @@
 - `--format`: text/markdown/html/native
 - `--resize`: resize image
 
+## LATER
+
+- email: validate all email addresses
+- email: sanitize subject
+- email: `--bcc`
+- email: `--cc`
+- email: `--smtp-provider` with common settings for Sendgrid, AWS, etc
+- email: support for HTML bodies
 
 ## Icons
 
