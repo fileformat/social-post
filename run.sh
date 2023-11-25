@@ -19,6 +19,6 @@ if [ -f ".env" ]; then
     export $(cat .env)
 fi
 export PATH=$PATH:$(pwd)/dist
-#social-post email --subject="testing on $(date -u)" --to=fileformat@gmail.com "this is the body!"
-social-post facebook "this is the body!"
+#social-post email --subject="testing on $(date -u)" --to=fileformat@gmail.com "custom ua!"
+social-post facebook --image=bin/shields.png --image-caption="$(date -u)" "this is the shields!"
 #go test -timeout 30s -run "^TestBadger$" github.com/FileFormatInfo/fflint/cmd/fflint

@@ -22,3 +22,5 @@ A command-line (CLI) tool to post to various social networks
 * [Steve Francia](https://spf13.com/) - [viper](https://github.com/spf13/viper)
 * [Steve Francia](https://spf13.com/) - [cobra](https://github.com/spf13/cobra)
 * See [`go.mod`](https://github.com/fileformat/social-post/blob/main/go.mod) for the GoLang modules used
+* jq
+* cb
