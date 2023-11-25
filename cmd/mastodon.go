@@ -26,7 +26,7 @@ var mastodonCmd = &cobra.Command{
 	},
 }
 
-func init() {
+func InitMastodon() {
 	rootCmd.AddCommand(mastodonCmd)
 
 	viper.BindEnv("MASTODON_SERVER")

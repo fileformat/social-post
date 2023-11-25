@@ -4,9 +4,10 @@ import (
 	"fmt"
 	"net/smtp"
 
+	"log/slog"
+
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"log/slog"
 )
 
 var (
@@ -23,11 +24,11 @@ var emailCmd = &cobra.Command{
 	Short: "Send an email",
 	Long:  `Send an email via SMTP\n\nNote:\n * the SMTP password is read from the SMTP_PASSWORD environment variable\n * the to addresses are only read from the arguments.`,
 	Args:  cobra.ExactArgs(1),
-	RunE:  post,
+	RunE:  emailSend,
 }
 
-func init() {
-	slog.Info("email init")
+func InitEmail() {
+	slog.Debug("email init")
 	rootCmd.AddCommand(emailCmd)
 
 	emailCmd.Flags().StringVar(&from, "from", "", "From email address")
@@ -51,14 +52,14 @@ func init() {
 	viper.BindPFlag("to", emailCmd.PersistentFlags().Lookup("to"))
 }
 
-func post(cmd *cobra.Command, args []string) error {
+func emailSend(cmd *cobra.Command, args []string) error {
 
 	from = viper.GetString("from")
 	subject = viper.GetString("subject")
 	//LATER: why doesn't this work? toAddresses = viper.GetStringSlice("to")
 	smtp_host = viper.GetString("smtp_host")
 	smtp_port = viper.GetInt("smtp_port")
-	smtp_username = viper.GetString("smtp_username")	
+	smtp_username = viper.GetString("smtp_username")
 
 	smtp_password := viper.GetString("SMTP_PASSWORD")
 	var auth smtp.Auth = nil
