@@ -71,6 +71,7 @@ func facebookPost(cmd *cobra.Command, args []string) error {
 	}
 
 	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("User-Agent", UserAgent)
 	client := http.Client{
 		Timeout: 30 * time.Second,
   	}
