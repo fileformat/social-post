@@ -3,9 +3,11 @@
 
 ## MVP
 
+- packaging
 
 ## LATER
 
+- GHA
 - `--format`: different formats for a message (plain/markdown/html/native/etc)
 - `--resize`: resize image
 - images from URL
@@ -16,6 +18,7 @@
 - email: `--smtp-provider` with common settings for Sendgrid, AWS, etc
 - email: support for HTML bodies
 - global timeout flag
+- global: `--test-token` to hit a token validation endpoint (if available)
 
 ## Icons
 

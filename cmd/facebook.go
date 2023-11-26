@@ -42,9 +42,9 @@ type facebookAttachedMedia struct {
 }
 
 type facebookPagePost struct {
-	Message     string `json:"message"`
-	AccessToken string `json:"access_token"`
-	Media []facebookAttachedMedia `json:"attached_media,omitempty"`
+	Message     string                  `json:"message"`
+	AccessToken string                  `json:"access_token"`
+	Media       []facebookAttachedMedia `json:"attached_media,omitempty"`
 }
 
 func facebookPost(cmd *cobra.Command, args []string) error {
@@ -78,14 +78,13 @@ func facebookPost(cmd *cobra.Command, args []string) error {
 	jsonBody := facebookPagePost{
 		Message:     body,
 		AccessToken: facebook_page_access_token,
-		Media: []facebookAttachedMedia{media},
+		Media:       []facebookAttachedMedia{media},
 	}
 
 	strBody, jsonErr := json.Marshal(jsonBody)
 	if jsonErr != nil {
 		return jsonErr
 	}
-	slog.Debug("Facebook request", "body", string(strBody))
 
 	bytesBody := []byte(strBody)
 	bodyReader := bytes.NewReader(bytesBody)
@@ -100,13 +99,13 @@ func facebookPost(cmd *cobra.Command, args []string) error {
 	req.Header.Set("User-Agent", UserAgent)
 	client := http.Client{
 		Timeout: 30 * time.Second,
-  	}
+	}
 
-  	res, resErr := client.Do(req)
-  	if resErr != nil {
+	res, resErr := client.Do(req)
+	if resErr != nil {
 		return resErr
 	}
-	
+
 	resBody, readErr := io.ReadAll(res.Body)
 	if readErr != nil {
 		return readErr
@@ -127,10 +126,11 @@ func facebookPostImage() (string, error) {
 		"source",
 		imageFile,
 		map[string]string{
-			"published": "false",
+			"published":    "false",
 			"access_token": facebook_page_access_token,
-			"caption": imageCaption,
-		})
+			"caption":      imageCaption,
+		},
+		nil)
 	if err != nil {
 		return "", err
 	}
@@ -139,6 +139,7 @@ func facebookPostImage() (string, error) {
 	if err != nil {
 		return "", err
 	}
+	slog.Debug("Facebook media post response", "status", res.Status, "body", string(body))
 
 	var photo facebookPhoto
 	jsonErr := json.Unmarshal(body, &photo)

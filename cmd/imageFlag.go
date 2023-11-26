@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"io"
+	"log/slog"
 	"mime/multipart"
 	"net/http"
 	"os"
@@ -15,7 +16,7 @@ import (
 )
 
 var (
-	imageFile string
+	imageFile    string
 	imageCaption string
 )
 
@@ -45,7 +46,7 @@ func checkImage() (bool, error) {
 	return true, nil
 }
 
-func postImage(dst, fieldname, filename string, otherFields map[string]string) (*http.Response, error) {
+func postImage(dst, fieldname, filename string, otherFields map[string]string, otherHeaders map[string]string) (*http.Response, error) {
 
 	f, _ := os.Open(filename)
 	defer f.Close()
@@ -74,10 +75,14 @@ func postImage(dst, fieldname, filename string, otherFields map[string]string) (
 
 	req.Header.Add("Content-Type", writer.FormDataContentType())
 	req.Header.Add("User-Agent", UserAgent)
+	for key, val := range otherHeaders {
+		req.Header.Add(key, val)
+	}
 
 	client := http.Client{
 		Timeout: 30 * time.Second,
-  	}
+	}
 
-  	return client.Do(req)
+	slog.Info("Uploading image", "filename", imageFile)
+	return client.Do(req)
 }

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# creates a single "photo-post" in one step
+# verify mastodon creds
 #
 
 
@@ -21,12 +21,8 @@ if [ -f "${ENV_FILE}" ]; then
 fi
 
 curl \
-    --request POST \
-    --form "source=@${TEST_IMAGE}" \
-    --form "published=true" \
-    --form "caption=test from facebook-postphotos.sh on $(date -u)" \
-    --form "access_token=${FACEBOOK_PAGE_ACCESS_TOKEN}" \
-    "https://graph.facebook.com/me/photos" \
+	--header "Authorization: Bearer ${MASTODON_ACCESS_TOKEN}" \
+	https://${MASTODON_SERVER}/api/v1/apps/verify_credentials \
     | cb
 
 cb | cat

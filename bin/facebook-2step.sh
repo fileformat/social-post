@@ -22,7 +22,7 @@ fi
 
 curl \
     --request POST \
-    --form "source=@${FACEBOOK_TEST_IMAGE}" \
+    --form "source=@${TEST_IMAGE}" \
     --form "published=false" \
     --form "caption=test from facebook-2step.sh on $(date -u)" \
     --form "access_token=${FACEBOOK_PAGE_ACCESS_TOKEN}" \
