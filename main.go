@@ -6,6 +6,7 @@ package main
 import (
 	"log/slog"
 	"os"
+	"strconv"
 
 	"github.com/fileformat/social-post/cmd"
 )
@@ -23,9 +24,14 @@ func initLogger() {
 	lvl := slog.LevelInfo
 	var err error
 	if logLevel != "" {
-		err = lvl.UnmarshalText([]byte(logLevel))
-		if err != nil {
-			lvl = slog.LevelInfo
+		ilvl, atoiErr := strconv.Atoi(logLevel)
+		if atoiErr == nil {
+			lvl = slog.Level(ilvl)
+		} else {
+			err = lvl.UnmarshalText([]byte(logLevel))
+			if err != nil {
+				lvl = slog.LevelInfo
+			}
 		}
 	}
 
@@ -35,12 +41,12 @@ func initLogger() {
 	switch logFormat {
 	case "json":
 		handler = slog.NewJSONHandler(os.Stdout, &slog.HandlerOptions{
-			Level:     slog.LevelDebug,
+			Level:     lvl,
 			AddSource: true,
 		})
 	case "text":
 		handler = slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{
-			Level:     slog.LevelDebug,
+			Level:     lvl,
 			AddSource: true,
 		})
 	default:
@@ -49,7 +55,7 @@ func initLogger() {
 		//defaultHandler := slog.Default().Handler()
 		//handler = defaultHandler
 		handler = slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{
-			Level:     slog.LevelDebug,
+			Level:     lvl,
 			AddSource: true,
 		})
 	}
