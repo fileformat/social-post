@@ -24,7 +24,7 @@ var rootCmd = &cobra.Command{
 }
 
 func Execute() {
-	slog.Info("root.Execute")
+	slog.Debug("root.Execute")
 	err := rootCmd.Execute()
 	if err != nil {
 		os.Exit(1)

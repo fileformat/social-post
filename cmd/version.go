@@ -8,7 +8,7 @@ import (
 
 var (
 	UserAgent string
-	vi VersionInfo
+	vi        VersionInfo
 )
 
 type VersionInfo struct {
@@ -22,10 +22,9 @@ type VersionInfo struct {
 var versionCmd = &cobra.Command{
 	Args:  cobra.NoArgs,
 	Use:   "version",
-	Short: "Prints fflint version information",
+	Short: "Version & build info",
 	Run: func(cmd *cobra.Command, args []string) {
-			fmt.Printf("Badger v%s (%s)\n", vi.Version, vi.LastMod)
-		
+		fmt.Printf("social-post v%s (%s)\n", vi.Version, vi.LastMod)
 	},
 }
 
