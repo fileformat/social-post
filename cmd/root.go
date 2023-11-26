@@ -31,6 +31,11 @@ func Execute() {
 	}
 }
 
+// needed for man pages
+func GetRoot() *cobra.Command {
+	return rootCmd
+}
+
 func init() {
 	cobra.OnInitialize(initConfig)
 

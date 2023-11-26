@@ -1,4 +1,5 @@
 boo
+/completions/
 dist/
 *.dll
 **/*.env
@@ -6,6 +7,7 @@ dist/
 *.exe~
 foo
 go.work
+/manpages/
 *.so
 **/*.tmp
 tmp/
