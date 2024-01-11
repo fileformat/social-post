@@ -11,14 +11,28 @@
 - `--format`: different formats for a message (plain/markdown/html/native/etc)
 - `--resize`: resize image
 - images from URL
+- images of a URL (i.e. screenshot a webpage as the image) - probably should be a separate utility
 - email: validate all email addresses
 - email: sanitize subject
 - email: `--bcc`
 - email: `--cc`
 - email: `--smtp-provider` with common settings for Sendgrid, AWS, etc
-- email: support for HTML bodies
+- email: support for HTML bodies (part of `--format` above)
 - global timeout flag
 - global: `--test-token` to hit a token validation endpoint (if available)
+
+## More Social Channels
+
+- Wordpress
+- LinkedIn
+- Slack (but can email to a channel in the meantime)
+- Pinterest
+- Discord
+- Tiktok
+- Snapchat
+- Reddit
+- Instagram
+- GDrive (could be more than just images)
 
 ## Icons
 
@@ -32,7 +46,4 @@
 
 # Facebook links
 
-- https://developers.facebook.com/tools/explorer/
-- https://developers.facebook.com/tools/debug/accesstoken/
-- https://developers.facebook.com/docs/pages-api/posts
-- https://developers.facebook.com/docs/facebook-login/guides/access-tokens/#pagetokens
+
