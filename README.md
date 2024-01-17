@@ -1,12 +1,18 @@
 # Social Post <img alt="Social Post Logo" src="docs/favicon.svg" height="96" align="right"/>
 
-A command-line (CLI) tool to post to various social networks
+A command-line (CLI) tool to automate posting to various social networks
 
 ## Using
 
+See the [website](https://social-post.marcuse.info/).
+
 ## Building
 
+`go build` is your friend.  See `run.sh` for how I do it during development.
+
 ## Contributing
+
+Contributions welcome!
 
 ## License
 
