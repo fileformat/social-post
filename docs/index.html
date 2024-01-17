@@ -1,0 +1,75 @@
+---
+title: "Social Post CLI - post to social networks from automations and CI"
+h1: "Social Post CLI"
+---
+
+<h2>What is this?</h2>
+
+<p>A command line utility you can use to post updates automatically.</p>
+
+<p>Some common use cases:</p>
+<ul>
+    <li>Announce a new version to a mailing list</li>
+    <li>Post a weekly update with stats on your CI jobs</li>
+    <li>...</li>
+</ul>
+
+<h2>Usage</h2>
+
+<ol>
+<li>Download the <a href="https://github.com/fileformat/social-post/releases/latest">latest release from Github</a>.</li>
+<li>Put it somewhere in your <code>PATH</code>.</li>
+<li>Run <code>social-post --help</code> to see the available commands and parameters.</li>
+</ol>
+
+<h2>What social sites are supported?</h2>
+
+<details>
+<summary>Email</summary>
+
+<p>You need to have access to a mail server (SMTP).</p>
+
+<p>Required parameters:</p>
+<ul>
+<li>SMTP host, port, username and password</li>
+</ul>
+
+</details>
+
+<details>
+<summary>Facebook</summary>
+
+<p>You need to have a Facebook Page.</p>
+
+<p>Parameters:</p>
+<ul>
+<li>facebook_page_id</li>
+<li>facebook_page_access_token</li>
+</ul>
+</details>
+
+<details>
+<summary>Mastodon</summary>
+
+<p>You need to have a Mastodon account that allows automated  posting.</a>.</p>
+
+<p>Parameters:</p>
+<ul>
+<li>mastodon_server (required)</li>
+<li>mastodon_user_token (required, only in env)</li>
+</ul>
+</details>
+
+<h2>What sites will you do next?</h2>
+
+<ul>
+<li>Slack (but you can use email in the meantime)</li>
+<li>MailChimp (for mass emails)</li>
+</ul>
+
+<p style="text-align:center;">
+    <small>
+        <a href="https://github.com/fileformat/social-post">Source</a>
+        &middot; <a href="https://andrew.marcuse.info/contact.html">Contact</a>
+    </small>
+</p>

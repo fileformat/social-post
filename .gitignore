@@ -8,6 +8,7 @@ dist/
 foo
 go.work
 /manpages/
+_site/
 *.so
 **/*.tmp
 tmp/
