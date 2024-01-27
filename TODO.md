@@ -9,17 +9,18 @@
 
 - GHA
 - `--format`: different formats for a message (plain/markdown/html/native/etc)
+- until `--format` is ready: some notes on preserving whitespace
 - `--resize`: resize image
-- images from URL
-- images of a URL (i.e. screenshot a webpage as the image) - probably should be a separate utility
+- images from URL (or instructions on using `curl`)
+- images of a URL (i.e. screenshot a webpage as the image) - probably should be a separate utility (or just instructions)
 - email: validate all email addresses
 - email: sanitize subject
 - email: `--bcc`
 - email: `--cc`
 - email: `--smtp-provider` with common settings for Sendgrid, AWS, etc
 - email: support for HTML bodies (part of `--format` above)
-- global timeout flag
-- global: `--test-token` to hit a token validation endpoint (if available)
+- global timeout flag (not urgent since most CI systems have one)
+- global: `--test-token` to hit a token validation endpoint (if available) (or `--dry-run`?)
 
 ## More Social Channels
 
