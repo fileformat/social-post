@@ -1,0 +1,16 @@
+[
+    {
+  "type": "context",
+  "elements": [
+    {
+      "type": "mrkdwn",
+      "text": "Location: **CONTEXT BLOCK**"
+    },
+    {
+      "type": "image",
+      "image_url": "https://andrew.marcuse.info/images/favicon512.png",
+      "alt_text": "images"
+    }
+  ]
+}
+]

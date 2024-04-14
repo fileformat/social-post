@@ -1,0 +1,17 @@
+[
+    {
+        "type": "section",
+        "text": {
+            "type": "mrkdwn",
+            "text": "A message *with some bold text* and _some italicized text_."
+        }
+    },
+    {
+        "type": "image",
+        "slack_file": 
+        {
+            "id": "F06TZRUDV2A"
+        },
+        "alt_text": "An incredibly cute kitten."
+    }
+]

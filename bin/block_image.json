@@ -1,0 +1,11 @@
+[{
+  "type": "image",
+  "title": {
+    "type": "plain_text",
+    "text": "Please enjoy this photo of a kitten"
+  },
+  "block_id": "image4",
+  "image_url": "https://andrew.marcuse.info/images/favicon512.png",
+  "alt_text": "An incredibly cute kitten."
+}
+]
