@@ -2,6 +2,7 @@ boo
 /completions/
 dist/
 *.dll
+.DS_Store
 **/*.env
 *.exe
 *.exe~

@@ -76,6 +76,7 @@ func main() {
 	cmd.InitEmail()
 	cmd.InitFacebook()
 	cmd.InitMastodon()
+	cmd.InitSlack()
 
 	cmd.Execute()
 
